@@ -29,63 +29,46 @@ Before we go to AWS, let's make a simple HTML file. We will save this as `index.
 		<h2>Welcome to my AWS S3 Static Website</h2>
 	</body>
 </html>
+```
 
-🚀 Step-by-Step Guide
-Step 1: Create an S3 Bucket
+---
+
+### 🚀 Step-by-Step Guide
+
+#### Step 1: Create an S3 Bucket
 A bucket is like a big folder that holds all your website files.
+1. Log in to your **AWS Console**.
+2. Search for the **S3** service and click on it.
+3. Click the **Create bucket** button.
+4. Type a name in the **Bucket name** box. *(Note: This name must be very unique. No one else in the world can have the same bucket name. Example: `my-first-website-project-12345`)*.
+5. Leave all the other settings exactly as they are.
+6. Go to the bottom and click **Create bucket**.
 
-Log in to your AWS Console.
-
-Search for the S3 service and click on it.
-
-Click the Create bucket button.
-
-Type a name in the Bucket name box. (Note: This name must be very unique. No one else in the world can have the same bucket name. Example: my-first-website-project-12345).
-
-Leave all the other settings exactly as they are.
-
-Go to the bottom and click Create bucket.
-
-Step 2: Turn on Static Website Hosting
+#### Step 2: Turn on Static Website Hosting
 Now, we must tell AWS to use this bucket as a website.
+1. Click on the name of the bucket you just made.
+2. Click on the **Properties** tab at the top.
+3. Scroll down until you see the **Static website hosting** section.
+4. Click **Edit**.
+5. Choose **Enable**.
+6. In the **Index document** box, type: `index.html`.
+7. Click **Save changes**.
 
-Click on the name of the bucket you just made.
-
-Click on the Properties tab at the top.
-
-Scroll down until you see the Static website hosting section.
-
-Click Edit.
-
-Choose Enable.
-
-In the Index document box, type: index.html.
-
-Click Save changes.
-
-Step 3: Allow Public Access
+#### Step 3: Allow Public Access
 Usually, AWS locks S3 buckets so no one can see them. Because we want people to see our website, we need to unlock it.
+1. Click on the **Permissions** tab at the top.
+2. Look for **Block public access (bucket settings)** and click **Edit**.
+3. **Uncheck** the box that says **Block all public access**.
+4. Click **Save changes**. (AWS will ask you to type "confirm" in a box to make sure you want to do this).
 
-Click on the Permissions tab at the top.
-
-Look for Block public access (bucket settings) and click Edit.
-
-Uncheck the box that says Block all public access.
-
-Click Save changes. (AWS will ask you to type "confirm" in a box to make sure you want to do this).
-
-Step 4: Add a Bucket Policy
+#### Step 4: Add a Bucket Policy
 We unlocked the door, but we still need to give people a ticket to look at our files. We do this with a "Bucket policy."
+1. Stay on the **Permissions** tab and scroll down to **Bucket policy**.
+2. Click **Edit**.
+3. Copy the code below and paste it into the box. 
+   > ⚠️ **IMPORTANT:** You must change the words `Your-Bucket-Name` to the real name of your bucket!
 
-Stay on the Permissions tab and scroll down to Bucket policy.
-
-Click Edit.
-
-Copy the code below and paste it into the box.
-
-⚠️ IMPORTANT: You must change the words Your-Bucket-Name to the real name of your bucket!
-
-JSON
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -98,32 +81,29 @@ JSON
         }
     ]
 }
-Click Save changes.
+```
+4. Click **Save changes**.
 
-Step 5: Upload Your HTML File
+#### Step 5: Upload Your HTML File
 Now it is time to put your website file into the bucket.
+1. Click on the **Objects** tab at the top.
+2. Click the **Upload** button.
+3. Click **Add files**, choose the `index.html` file from your computer, and then click the **Upload** button at the bottom.
 
-Click on the Objects tab at the top.
-
-Click the Upload button.
-
-Click Add files, choose the index.html file from your computer, and then click the Upload button at the bottom.
-
-Step 6: Test Your Website!
+#### Step 6: Test Your Website!
 Let's go see your website on the internet!
+1. Go back to the **Properties** tab.
+2. Scroll all the way down to the **Static website hosting** section.
+3. You will see a link called the **Bucket website endpoint**. 
+4. Click that link. You should now see your website!
 
-Go back to the Properties tab.
+---
 
-Scroll all the way down to the Static website hosting section.
+### 💻 Bonus: Useful AWS CLI Commands
 
-You will see a link called the Bucket website endpoint.
-
-Click that link. You should now see your website!
-
-💻 Bonus: Useful AWS CLI Commands
 If you want to practice using the Command Line Interface (CLI) instead of the AWS website, here are some basic commands you can try:
 
-Bash
+```bash
 # See a list of all your Buckets
 aws s3 ls
 
@@ -135,7 +115,7 @@ aws s3 ls s3://my-bucket-name/ --human-readable
 
 # Download a file from the bucket to your computer
 aws s3 cp s3://my-bucket-name/file.txt .
-⬅️ Back to Main Menu
+```
 
-
-Would you like me to give you the full Markdown file for **Project 2** next?
+---
+[⬅️ Back to Main Menu](../README.md)
