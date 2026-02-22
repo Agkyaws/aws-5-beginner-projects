@@ -101,7 +101,39 @@ yum update -y
 yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
-# (Your HTML code goes here)
+cat > /var/www/html/index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My AWS EC2 Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #FF9900;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Welcome to My AWS EC2 Server!</h1>
+        <p>This web server is running on Amazon Linux with Apache</p>
+    </div>
+</body>
+</html>
+EOF
 ```
 
 ---
