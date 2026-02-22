@@ -106,6 +106,7 @@ We need to group the Private Subnets and tell RDS to run only in these locations
 2. Database creation method: **Full configuration**
 3. Engine type: **MySQL**
 4. Templates: **Single-AZ DB instance deployment**
+   > 💡 **Note for Beginners:** Why Single-AZ? AWS always requires a DB Subnet Group to have at least 2 Availability Zones. However, to stay in the Free Tier and save money, we are choosing "Single-AZ" deployment. This means AWS will simply place our one database instance into *one* of those two private subnets.
 5. **Settings:**
    * DB instance identifier: (leave default or give name)
    * Master username: `admin`
