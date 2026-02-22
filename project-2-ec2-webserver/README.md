@@ -2,7 +2,7 @@
 
 In this project, we move from "Storage" (S3) to "Compute" (EC2). You will launch a Virtual Server in the cloud and set it up to be a real Web Server. This helps you understand how Infrastructure-as-a-Service (IaaS) works.
 
-![AWS EC2 Architecture](image_052cda.jpg)
+![AWS EC2 Architecture](image_02.jpg)
 
 ### 🎯 What You Will Learn
 * **EC2 (Elastic Compute Cloud):** How to start a virtual machine (Linux) in the cloud.
