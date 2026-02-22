@@ -17,7 +17,7 @@ Instead of using servers, we will use S3 to save your static files (like HTML) a
 
 ### 🛠️ What You Need First: Create Your Website File
 
-Before we go to AWS, let's make a simple HTML file. We will save this as `index.html` inside this project folder.
+Before we go to AWS, let's make a simple HTML file. We will save this as `index.html` inside the project folder.
 
 ```html
 <html>
