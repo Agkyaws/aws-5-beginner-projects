@@ -2,7 +2,7 @@
 
 In this project, you will build a secure network with two different zones. You will learn how to keep a database safe by hiding it from the internet while allowing your web server to talk to it.
 
-![AWS Secure RDS Architecture](image_0685c0.jpg)
+![AWS Secure RDS Architecture](image_04.png)
 
 ### 🎯 What You Will Learn
 * **Network Isolation:** The difference between Public and Private subnets.
