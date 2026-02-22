@@ -6,7 +6,7 @@ Welcome to Project 1! Today, we will learn the easiest and cheapest way to host 
 
 Instead of using servers, we will use S3 to save your static files (like HTML) and turn them into a real website that anyone in the world can visit.
 
-![AWS S3 Architecture](image.png)
+![AWS S3 Architecture](image_01.png)
 
 ### 🎯 What You Will Learn
 * **AWS S3 Basics:** How to make a "Bucket" and upload files (called "Objects").
